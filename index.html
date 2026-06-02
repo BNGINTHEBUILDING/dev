@@ -1,142 +1,354 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Football Premium</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      overflow-x: hidden;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Football Elite</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#050505;
+    color:white;
+    overflow-x:hidden;
+}
+
+header{
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
+    url("https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1600");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:5rem;
+    text-transform:uppercase;
+    animation:glow 2s infinite alternate;
+}
+
+.hero p{
+    font-size:1.3rem;
+    margin-top:20px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 40px;
+    background:#00ff88;
+    color:black;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:bold;
+    transition:.4s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px #00ff88;
     }
-    header {
-      text-align: center;
-      padding: 50px 20px;
-      animation: fadeInDown 2s ease;
+    to{
+        text-shadow:0 0 30px #00ff88;
     }
-    header h1 {
-      font-size: 3em;
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      background: linear-gradient(90deg, #FFD700, #FF4500);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin: 20px 0;
-      animation: fadeIn 3s ease;
-    }
-    nav a {
-      text-decoration: none;
-      color: #FFD700;
-      font-weight: bold;
-      transition: transform 0.3s;
-    }
-    nav a:hover {
-      transform: scale(1.2);
-      color: #FF4500;
-    }
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      animation: zoomIn 2s ease;
-    }
-    .hero h2 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.2em;
-      max-width: 600px;
-      margin: auto;
-    }
-    .cards {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 40px 20px;
-    }
-    .card {
-      background: rgba(255,255,255,0.1);
-      border-radius: 15px;
-      padding: 20px;
-      width: 250px;
-      text-align: center;
-      transition: transform 0.5s, background 0.5s;
-      animation: fadeInUp 2s ease;
-    }
-    .card:hover {
-      transform: translateY(-10px) scale(1.05);
-      background: rgba(255,255,255,0.2);
-    }
-    .card h3 {
-      margin-bottom: 10px;
-      color: #FFD700;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.5);
-      animation: fadeIn 4s ease;
-    }
-    @keyframes fadeInDown {
-      from {opacity: 0; transform: translateY(-50px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(50px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-    @keyframes zoomIn {
-      from {opacity: 0; transform: scale(0.8);}
-      to {opacity: 1; transform: scale(1);}
-    }
-  </style>
+}
+
+section{
+    padding:80px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:50px;
+    color:#00ff88;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#111;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px #00ff88;
+}
+
+.card h2{
+    font-size:3rem;
+    color:#00ff88;
+}
+
+.players{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.player{
+    background:#111;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.player:hover{
+    transform:scale(1.05);
+}
+
+.player img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
+.player-info{
+    padding:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th,table td{
+    padding:15px;
+    border-bottom:1px solid #333;
+    text-align:center;
+}
+
+table th{
+    background:#00ff88;
+    color:black;
+}
+
+.news{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.news-card{
+    background:#111;
+    border-radius:15px;
+    padding:25px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#111;
+}
+
+.ball{
+    position:fixed;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:white;
+    right:30px;
+    bottom:30px;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-20px);}
+}
+
+</style>
 </head>
+
 <body>
-  <header>
-    <h1>Football Premium</h1>
-    <nav>
-      <a href="#">Accueil</a>
-      <a href="#">Matchs</a>
-      <a href="#">Clubs</a>
-      <a href="#">Joueurs</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h2>Le Football dans toute sa splendeur</h2>
-    <p>Découvrez les dernières actualités, les plus beaux buts et les moments inoubliables du monde du football. Un site premium qui vous fait vibrer comme au stade.</p>
-  </section>
+<header>
+<div class="hero">
+<h1>Football Elite</h1>
+<p>Le futur du football commence ici</p>
+<a href="#stats" class="btn">Découvrir</a>
+</div>
+</header>
 
-  <section class="cards">
-    <div class="card">
-      <h3>⚽ Matchs en direct</h3>
-      <p>Suivez les scores et les actions minute par minute.</p>
-    </div>
-    <div class="card">
-      <h3>🏆 Classements</h3>
-      <p>Les meilleurs clubs et joueurs du moment.</p>
-    </div>
-    <div class="card">
-      <h3>🔥 Highlights</h3>
-      <p>Revivez les plus belles actions en vidéo.</p>
-    </div>
-  </section>
+<section id="stats">
+<h2 class="section-title">Statistiques Mondiales</h2>
 
-  <footer>
-    <p>&copy; 2026 Football Premium. Tous droits réservés.</p>
-  </footer>
+<div class="stats">
+
+<div class="card">
+<h2 id="goals">0</h2>
+<p>Buts marqués</p>
+</div>
+
+<div class="card">
+<h2 id="matches">0</h2>
+<p>Matchs joués</p>
+</div>
+
+<div class="card">
+<h2 id="fans">0</h2>
+<p>Supporters</p>
+</div>
+
+<div class="card">
+<h2 id="clubs">0</h2>
+<p>Clubs affiliés</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Stars du Football</h2>
+
+<div class="players">
+
+<div class="player">
+<img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1000">
+<div class="player-info">
+<h3>Attaquant Elite</h3>
+<p>Machine à buts.</p>
+</div>
+</div>
+
+<div class="player">
+<img src="https://images.unsplash.com/photo-1518604666860-9ed391f76460?q=80&w=1000">
+<div class="player-info">
+<h3>Milieu Maestro</h3>
+<p>Vision exceptionnelle.</p>
+</div>
+</div>
+
+<div class="player">
+<img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1000">
+<div class="player-info">
+<h3>Gardien Légendaire</h3>
+<p>Mur infranchissable.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Classement</h2>
+
+<table>
+
+<tr>
+<th>Position</th>
+<th>Club</th>
+<th>Points</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Football Elite FC</td>
+<td>92</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Champions United</td>
+<td>88</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Golden Eagles</td>
+<td>84</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Black Lions</td>
+<td>80</td>
+</tr>
+
+</table>
+</section>
+
+<section>
+<h2 class="section-title">Actualités</h2>
+
+<div class="news">
+
+<div class="news-card">
+<h3>Finale Historique</h3>
+<p>Une finale spectaculaire devant des millions de supporters.</p>
+</div>
+
+<div class="news-card">
+<h3>Nouveau Record</h3>
+<p>Un attaquant dépasse la barre des 50 buts cette saison.</p>
+</div>
+
+<div class="news-card">
+<h3>Mercato</h3>
+<p>Des transferts records secouent le marché.</p>
+</div>
+
+</div>
+</section>
+
+<footer>
+<h3>Football Elite © 2026</h3>
+<p>Développé par Baba Guirassy</p>
+</footer>
+
+<div class="ball"></div>
+
+<script>
+
+function animateValue(id,end,duration){
+
+let obj=document.getElementById(id);
+let start=0;
+let range=end-start;
+let increment=end>start?1:-1;
+let step=Math.abs(Math.floor(duration/range));
+
+let timer=setInterval(()=>{
+
+start+=increment;
+obj.textContent=start.toLocaleString();
+
+if(start==end){
+clearInterval(timer);
+}
+
+},step);
+}
+
+animateValue("goals",12450,3000);
+animateValue("matches",850,3000);
+animateValue("fans",5000000,3000);
+animateValue("clubs",320,3000);
+
+</script>
+
 </body>
 </html>
