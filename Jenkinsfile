@@ -18,7 +18,7 @@ pipeline {
         stage('Run Docker') {
             steps {
                 bat 'docker rm -f monsite || exit 0'
-                bat 'docker run -d -p 8080:80 --name monsite dev'
+                bat 'docker run -d -p 8090:80 --name monsite dev'
             }
         }
     }
