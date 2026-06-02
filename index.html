@@ -1,10 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Projet DevOps</title>
+  <meta charset="UTF-8">
+  <title>Football Premium</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      animation: fadeInDown 2s ease;
+    }
+    header h1 {
+      font-size: 3em;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      background: linear-gradient(90deg, #FFD700, #FF4500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0;
+      animation: fadeIn 3s ease;
+    }
+    nav a {
+      text-decoration: none;
+      color: #FFD700;
+      font-weight: bold;
+      transition: transform 0.3s;
+    }
+    nav a:hover {
+      transform: scale(1.2);
+      color: #FF4500;
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      animation: zoomIn 2s ease;
+    }
+    .hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: auto;
+    }
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+    .card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      transition: transform 0.5s, background 0.5s;
+      animation: fadeInUp 2s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      background: rgba(255,255,255,0.2);
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      color: #FFD700;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.5);
+      animation: fadeIn 4s ease;
+    }
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-50px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(50px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes zoomIn {
+      from {opacity: 0; transform: scale(0.8);}
+      to {opacity: 1; transform: scale(1);}
+    }
+  </style>
 </head>
 <body>
-    <h1>Projet DevOps</h1>
-    <h2>Baba</h2>
+  <header>
+    <h1>Football Premium</h1>
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#">Matchs</a>
+      <a href="#">Clubs</a>
+      <a href="#">Joueurs</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Le Football dans toute sa splendeur</h2>
+    <p>Découvrez les dernières actualités, les plus beaux buts et les moments inoubliables du monde du football. Un site premium qui vous fait vibrer comme au stade.</p>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <h3>⚽ Matchs en direct</h3>
+      <p>Suivez les scores et les actions minute par minute.</p>
+    </div>
+    <div class="card">
+      <h3>🏆 Classements</h3>
+      <p>Les meilleurs clubs et joueurs du moment.</p>
+    </div>
+    <div class="card">
+      <h3>🔥 Highlights</h3>
+      <p>Revivez les plus belles actions en vidéo.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Football Premium. Tous droits réservés.</p>
+  </footer>
 </body>
 </html>
