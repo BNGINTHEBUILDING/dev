@@ -14,6 +14,13 @@ pipeline {
                 bat 'docker build -t dev .'
             }
         }
+        
+        stage('Deploy Kubernetes') {
+            steps {
+        bat 'kubectl apply -f k8s/deployment.yaml'
+        bat 'kubectl apply -f k8s/service.yaml'
+            }
+        }
 
         stage('Run Docker') {
             steps {
